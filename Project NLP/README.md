@@ -1,108 +1,71 @@
-# **Projekt zaliczeniowy – Zastosowania Uczenia Maszynowego**
+# **NLP**
 
-## **1. Informacje ogólne**
-**Nazwa projektu:**  
-*Analiza emocji w tweetach (TweetEval)*  
-
-**Autor:**  
-Michał Załocha 
-
-**Kierunek, rok i tryb studiów:**  
-*Informatyka, semestr III, internetowe*  
-
-**Data oddania projektu:**  
-18.01.2026  
+## **1. About project**
+The goal of the project is to classify emotions in texts from social media.
 
 ---
 
-## **2. Opis projektu**
-Celem projektu jest klasyfikacja emocji w tekstach z mediów społecznościowych. Projekt pozwala na analizę nastrojów użytkowników Twittera z wykorzystaniem metod NLP i uczenia maszynowego.  
+## **2. Data**
+**Source: Kaggle**  
 
----
-
-## **3. Dane**
-**Źródło danych: Kaggle**  
-
-**Link do danych:**  
+**Link:**  
 `https://www.kaggle.com/datasets/thedevastator/tweeteval-a-multi-task-classification-benchmark`  
 
-**Opis danych:**  
-- liczba próbek:  3223
-- liczba cech / kolumn:  2
-- format danych:  csv
-- rodzaj etykiet / klas:  klasy emocji (anger, joy, sadness, optimism)
-- licencja:  CC0: Public Domain
+**Description:**  
+- number of samples:  3223
+- number of columns:  2
+- data type:  csv
+- rodzaj of classes:  classes of emotions (anger, joy, sadness, optimism)
 
 ---
 
-## **4. Cel projektu**
-Cel badawczy: porównanie skuteczności trzech różnych podejść do klasyfikacji tekstu pod względem jakości predykcji emocji.
+## **3. Goal**
+Comparison of the effectiveness of three different text classification approaches in terms of emotion prediction quality.
 
-Model przypisuje jedną z czterech emocji do pojedynczego tweeta. Z projektu można się dowiedzieć, który model radzi sobie najlepiej z tego typu danymi.
-
----
-
-## **5. Struktura projektu**
-Projekt składa się z czterech głównych etapów, każdy w osobnym notatniku `.ipynb`:
-
-| Etap | Nazwa pliku | Opis |
-|------|--------------|------|
-| 1 | `1_EDA.ipynb` | Analiza danych, wizualizacje, wnioski |
-| 2 | `2_Preprocessing_Features.ipynb` | Czyszczenie danych, preprocessing, inżynieria cech |
-| 3 | `3_Models_Training.ipynb` | Trening modeli klasycznego ML, sieci neuronowej i transformera |
-| 4 | `4_Evaluation.ipynb` | Ewaluacja, porównanie modeli, wizualizacje wyników |
+The model assigns one of four emotions to a single tweet. The project reveals which model performs best with this type of data.
 
 ---
 
-## **6. Modele**
-Projekt obejmuje trzy różne podejścia do modelowania danych:
+## **4. Models**
 
-### **6.1 Model klasyczny ML**
-- Algorytm: Logistic Regression
-- Krótki opis działania: użycie wektoryzacji TF-IDF, aby przekształcić tweety na wersję numeryczną i uczenie się na powstałych wektorach
-- Wyniki / metryki: F1-macro: 0.52
+### **6.1 Classical ML**
+- Algorithm: Logistic Regression
+- Result: F1-macro: 0.52
 
-### **6.2 Sieć neuronowa zbudowana od zera**
-- Architektura: Dense
-- Liczba warstw / neuronów: 4
-- Funkcje aktywacji i optymalizator:  softmax, Adam
-- Wyniki: F1-macro: 0.59
+### **4.2 Neuron network**
+- Architecture: Dense
+- Number of neurons: 4
+- Result: F1-macro: 0.59
 
-### **6.3 Model transformerowy (fine-tuning)**
-- Nazwa modelu: distilBERT
-- Zastosowana biblioteka: HuggingFace Transformers
-- Zakres dostosowania: pełny fine-tuning
-- Wyniki: F1-macro: 0.79
+### **4.3 Transformer (fine-tuning)**
+- Model name: distilBERT
+- Used library: HuggingFace Transformers
+- Result: F1-macro: 0.79
 
 ---
 
-## **7. Ewaluacja**
-**Użyte metryki: accuracy, precision, recall, F1‑score (macro)**  
+## **5. Ewaluacja**
+**Metrics used: accuracy, precision, recall, F1‑score (macro)**  
 **  
 
-**Porównanie modeli:**
+**Models comparison:**
 
-| Model | Metryka główna | Wynik | Uwagi |
+| Model | Main metric | Result | Comments |
 |--------|----------------|--------|--------|
-| Klasyczny ML | F1-macro | 0.52 |  |
-| Sieć neuronowa | F1-macro | 0.59 |  |
-| Transformer | F1-macro | 0.79 | najlepszy |
+| Classical ML | F1-macro | 0.52 |  |
+| Neuron network | F1-macro | 0.59 |  |
+| Transformer | F1-macro | 0.79 | best |
 
-**Wizualizacje:**  
-- Macierz pomyłek  
-- Krzywa ROC
+**Visualisation:**  
+- Confusion matrix
+- ROC curve
 
 ---
 
-## **8. Wnioski i podsumowanie**
-Najlepsze wyniki uzyskał model transformerowy, co wynika z wykorzystania transfer learningu oraz wiedzy językowej zdobytej na dużych zbiorach danych.
 
-Przykładowe zastosowania: analiza nastrojów w mediach społecznościowych
----
-
-## **9. Struktura repozytorium**
+## **6. Structure**
 ```
-projekt_zum_2025/
+project_NLP/
 │
 ├── data/
 │ ├── raw/
@@ -117,7 +80,7 @@ projekt_zum_2025/
 ├── README.md
 └── requirements.txt
 ```
-## **10. Technologia i biblioteki**
+## **7. Technologies and libraries**
 - Python 3.x  
 - NumPy, Pandas, Matplotlib, Plotly, Seaborn, Joblib  
 - scikit-learn  
@@ -126,8 +89,5 @@ projekt_zum_2025/
 
 ---
 
-## **11. Licencja projektu**
-Projekt udostępniony na licencji:  CC0
- 
-Źródło danych: https://www.kaggle.com/datasets/thedevastator/tweeteval-a-multi-task-classification-benchmark.
+Data source: https://www.kaggle.com/datasets/thedevastator/tweeteval-a-multi-task-classification-benchmark.
 
